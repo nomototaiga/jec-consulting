@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社Jecコンサルティング</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        body { background-color: #0a0b10; color: white; font-family: sans-serif; }
+        .hero { height: 60vh; display: flex; align-items: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000'); background-size: cover; }
+        .card-custom { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 15px; padding: 30px; }
+        .btn-primary { background-color: #00d4ff; border: none; color: black; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container"><a class="navbar-brand" href="#">JEC CONSULTING</a></div>
+    </nav>
+
+    <header class="hero text-center">
+        <div class="container">
+            <h1 class="display-2 fw-bold">Accelerate Vision.</h1>
+            <p class="lead">次世代のコンサルティングを、あなたに。</p>
+        </div>
+    </header>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 card-custom">
+                <h2 class="text-center mb-4">お問い合わせ</h2>
+                
+                <script>
+                    const params = new URLSearchParams(window.location.search);
+                    if (params.get('status') === 'success') {
+                        document.write('<div class="alert alert-success">送信が完了しました！(CSVに保存されました)</div>');
+                    }
+                </script>
+
+                <form action="contact.php" method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">お名前</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">メールアドレス</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">お問い合わせ内容</label>
+                        <textarea name="message" class="form-control" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">送信する</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
