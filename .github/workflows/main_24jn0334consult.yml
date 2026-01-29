@@ -11,9 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. GitHubから最新のファイルを取得
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 2. Azureへ直接ファイルを配送（合鍵を使用）
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
